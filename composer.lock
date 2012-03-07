@@ -1,0 +1,12 @@
+{
+    "hash": "56a7470e6f8b38e1264197784a96db7b",
+    "packages": [
+        {
+            "package": "symfony/http-foundation",
+            "version": "dev-master",
+            "source-reference": "2abe7f1b8e0f808dad0cc001b9d69371b604d719",
+            "alias": "2.1.9999999.9999999-dev"
+        }
+    ],
+    "aliases": []
+}

@@ -1,0 +1,57 @@
+body {
+    font: 12px/18px Georgia,"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+	background: none repeat scroll center top #AFAFAF;
+}
+
+h1 {font-style: italic;}
+
+#wrap {
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 960px;
+	color: #2B2B2B;
+	text-shadow: 0 1px 1px #FFFFFF;
+}
+
+
+.login-block {
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    text-align:center;
+    width:260px;
+}
+
+.login-block form {
+    border-radius:15px;
+    box-shadow:0 0 10px #333333;
+    border:3px solid white;
+    padding:10px 10px 35px 10px;
+    margin: 0 auto;
+	background: #FFF;
+	text-shadow: 0 1px 1px #7F7F7F;
+}
+
+.login-block form label {
+   width: 100px;
+}
+
+.login-block form input {
+   margin-left: 10px;
+   width: 100px;
+   float: right;
+}
+
+.login-block form input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+.login-block form input.button {
+   margin-bottom: 10px;
+}
+
+.error {
+	color: #FF0000; 
+	text-shadow: none;
+}

@@ -1,0 +1,6 @@
+Installation:
+
+For install external required vendors run the following in root directory:
+
+php composer.phar install
+

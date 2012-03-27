@@ -9,36 +9,13 @@
  * @see http://symfony.com/doc/2.0/contributing/code/standards.html
  *
  */
-/*
-$finder = new Finder();
-$finder
-    ->files()
-    ->name('*.md')
-    ->name('*.php')
-    ->name('*.php.dist')
-    ->name('*.twig')
-    ->name('*.xml')
-    ->name('*.xml.dist')
-    ->name('*.yml')
-    ->in(array(__DIR__.'/src', __DIR__.'/tests'))
-    ->notName(basename(__FILE__))
-    ->exclude('.git')
-    ->exclude('vendor')
-;
 
+$fix = true;
 $count = 0;
-
-$iterator = new RecursiveDirectoryIterator(__DIR__);
-while($iterator->valid()) {
-    $file = $iterator->current();
-    echo $iterator->key() . " => " . $file->getFilename() . "\n";
-    $iterator->next();
-}
-*/
-
 $files = new RegexIterator(
 new RecursiveIteratorIterator(
 new RecursiveDirectoryIterator(__DIR__)), '/^.+\.php$/i', RecursiveRegexIterator::GET_MATCH);
+
 foreach ($files as $file => $cur)
 {
     $old = file_get_contents($file);
@@ -46,7 +23,7 @@ foreach ($files as $file => $cur)
     $new = $old;
 
     // [Structure] Never use short tags (<?)
-    $new = str_replace('<? ', '<?php ', $new);
+    $new = str_replace('<?php ', '<?php ', $new);
 
     // [Structure] Indentation is done by steps of four spaces (tabs are never allowed)
     $new = preg_replace_callback('/^( *)(\t+)/m', function ($matches) use ($new) {
@@ -77,11 +54,6 @@ foreach ($files as $file => $cur)
     // [Structure] A file must always ends with a linefeed character
     if (strlen($new) && "\n" != substr($new, -1)) {
         $new .= "\n";
-    }
-
-    // [Structure] elseif, not else if
-    if ('twig' !== $file->getExtension()) {
-        $new = preg_replace('/} else if \(/', '} elseif (', $new);
     }
 
     if ($new != $old) {

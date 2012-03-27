@@ -3,14 +3,14 @@
 namespace Framework;
 
 abstract class Singleton {
-    
-    protected function __construct() {        
+
+    protected function __construct() {
     }
-    
-    final private function __clone() {        
+
+    final private function __clone() {
     }
-      
-    final public static function getInstance() 
+
+    final public static function getInstance()
     {
         static $_instances = array();
         $calledClassName = get_called_class();
@@ -19,6 +19,7 @@ abstract class Singleton {
         {
             $_instances[$calledClassName] = new static();
         }
+
         return $_instances[$calledClassName];
     }
 

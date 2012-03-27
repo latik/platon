@@ -10,7 +10,7 @@
 <body>
   <div id = 'wrap'>
      <div id = 'header'></div>
-     <div id = 'content'>{{content}}</div>    
+     <div id = 'content'>{{content}}</div>
      <div id = 'footer'></div>
   </div>
   <?php foreach ($scripts as $file) print ('<script src="' . $file . '"></script>'. PHP_EOL) ?>

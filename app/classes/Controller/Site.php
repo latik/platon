@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 class Controller_Site extends Framework\Controller_Template {
-    
+
     public $template = 'default_template';
-     
+
     public function after()
     {
         $styles  = array(
@@ -16,7 +16,7 @@ class Controller_Site extends Framework\Controller_Template {
 
         $this->template->styles = array_merge( $this->template->styles, $styles );
         $this->template->scripts = array_merge( $this->template->scripts, $scripts );
-        
+
         parent::after();
     }
 }

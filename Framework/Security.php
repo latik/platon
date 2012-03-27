@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 namespace Framework;
 
 class Security {
-    
+
     public static function sanitize($value)
     {
         if (is_array($value) OR is_object($value))
@@ -26,9 +26,9 @@ class Security {
                 // Null bytes issues
                 $value = str_replace("\0", '', $value);
             }
-    
+
         }
-    
+
         return $value;
     }
 }

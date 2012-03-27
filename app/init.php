@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $registry = Framework\Registry::getInstance();
 

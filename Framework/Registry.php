@@ -2,6 +2,10 @@
 
 namespace Framework;
 
+/*
+ * Класс реестра -  одиночка, предоставляет "магические" методы для доступа переменным.
+ * Метод asShared необходим для работы с объектами одиночками  
+ */
 class Registry extends Singleton {
 
     protected $values = array();
@@ -13,7 +17,7 @@ class Registry extends Singleton {
     function __get($id) {
         if (!isset($this->values[$id]))
         {
-            throw new Exception(sprintf('Value "%s" is not defined.', $id));
+            throw new \Exception(sprintf('Value "%s" is not defined.', $id));
         }
         if (is_callable($this->values[$id]))
         {

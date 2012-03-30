@@ -2,5 +2,14 @@ Installation:
 
 For install external required vendors run the following in root directory:
 
+wget http://getcomposer.org/composer.phar
 php composer.phar install
 
+---------
+
+Установка:
+
+Для установки необходимых для работы компонентов нужно в корневой директории выполнить команду:
+
+wget http://getcomposer.org/composer.phar
+php composer.phar install

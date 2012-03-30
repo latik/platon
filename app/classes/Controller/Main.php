@@ -13,6 +13,8 @@ class Controller_Main extends Controller_Site {
             $content = $user->getname();
 
             $this->template->content      = $content . '<br>';
+            
+            $this->template->content .= $this->request->user_agent . '<br>';
 
             //Передаем переменные в вьюху
 

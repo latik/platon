@@ -37,6 +37,10 @@ class Response extends Storage {
         $this->body = (string) $content;
     }
 
+    public function getContent() {
+        return $this->body;
+    }
+
     public function setStatus($status) {
         $this->status = (int) $status;
     }

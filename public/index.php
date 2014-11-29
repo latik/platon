@@ -1,17 +1,11 @@
 <?php
-// SET PHP DEVEL ENVIRONMENT
-@error_reporting(-1);
-@ini_set('error_reporting', -1);
-@ini_set('display_errors', 1);
-@ini_set('display_startup_errors', 1);
-@ini_set('ignore_repeated_errors', 1);
 
 // Default timezone of server
 date_default_timezone_set('UTC');
 
 // Site dirs
-define ('DOCROOT', str_replace('www', '', realpath(__DIR__)));
-define ('APPPATH', DOCROOT . 'app'. DIRECTORY_SEPARATOR );
+define ('DOCROOT', dirname(__DIR__). DIRECTORY_SEPARATOR);
+define ('APPPATH', DOCROOT . 'app'. DIRECTORY_SEPARATOR);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

@@ -39,7 +39,7 @@ class Application {
         }
         else
         {
-            throw new Exception('Configuration not exists :(');
+            throw new \RuntimeException('Configuration not exists :(');
         }
     }
 	
